@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Sujal Anant Supekar | Electronics & Computer Technology Undergraduate | PICT Pune</title>
+    <meta name="title" content="Sujal Anant Supekar | Electronics & Computer Technology Undergraduate | PICT Pune" />
+    <meta name="description" content="Portfolio of Sujal Anant Supekar — Electronics & Computer Technology undergraduate at PICT Pune. Specialized in software development, backend engineering, REST APIs, and algorithmic problem-solving." />
+    <meta name="keywords" content="Sujal Supekar, Sujal Anant Supekar, PICT Pune, Software Engineer, Backend Developer, Node.js, C++, DSA, Competitive Programming" />
+    <meta name="author" content="Sujal Anant Supekar" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sujalsupekar.vercel.app/" />
+    <meta property="og:title" content="Sujal Anant Supekar | Software Engineering & Problem Solving" />
+    <meta property="og:description" content="Electronics and Computer Technology undergraduate at PICT Pune. Explore projects, skills, education, and competitive programming achievements." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Theme Initialization Script -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const isDark = stored ? stored === 'dark' : true; // Default dark
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-navy-950 text-slate-100 antialiased selection:bg-brand-500/30 selection:text-brand-300 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
