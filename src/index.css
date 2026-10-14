@@ -7,14 +7,14 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
   html.dark body {
     background-color: #07080e;
     color: #f8fafc;
-  }
-
-  html.light body {
-    background-color: #f8fafc;
-    color: #0f172a;
   }
 }
 
@@ -22,55 +22,45 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
 .dark ::-webkit-scrollbar-track {
   background: #07080e;
 }
-.light ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
   background: #1c2032;
-  border-radius: 4px;
-}
-.light ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #8b5cf6;
 }
 
-/* Developer Grid Matrix with soft ambient */
-.dark .bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-}
-
-.light .bg-grid-pattern {
+/* Developer Grid Matrix */
+.bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
     linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
 /* Glowing Neon utilities */
 .neon-glow-purple {
-  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.5));
+  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.4));
 }
 .neon-glow-pink {
-  filter: drop-shadow(0 0 14px rgba(236, 72, 153, 0.5));
+  filter: drop-shadow(0 0 14px rgba(236, 72, 153, 0.4));
 }
 .neon-glow-amber {
-  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.45));
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.35));
 }
-
-/* Glassmorphism surfaces */
-.glass-card {
-  background: rgba(16, 18, 27, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-

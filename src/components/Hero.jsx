@@ -60,16 +60,16 @@ export default function Hero() {
   return (
     <section id="hero" className="relative pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
       
-      {/* Background Glowing Aurora Waves matching reference */}
+      {/* Background Glowing Aurora Waves */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         {/* Glowing Orbs */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-purple-600/15 blur-[140px] rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-purple-600/10 dark:bg-purple-600/15 blur-[140px] rounded-full" />
         <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-pink-500/10 blur-[120px] rounded-full" />
         <div className="absolute top-1/2 left-10 w-[350px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full" />
 
         {/* Dynamic Curved Flowing Neon Wave Lines */}
         <svg
-          className="absolute top-12 left-0 w-full h-[650px] opacity-40 neon-glow-purple"
+          className="absolute top-12 left-0 w-full h-[650px] opacity-30 dark:opacity-40 neon-glow-purple"
           viewBox="0 0 1440 650"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -114,12 +114,12 @@ export default function Hero() {
           {/* Left Column: Hello & Circuit Pointer Tags */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-5 text-left order-2 lg:order-1">
             
-            {/* "Hello," Heading matching reference */}
+            {/* "Hello," Heading */}
             <div>
-              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none">
+              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none">
                 Hello,
               </h1>
-              <p className="text-sm sm:text-base text-slate-300/90 mt-3 max-w-sm leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300/90 mt-3 max-w-sm leading-relaxed">
                 {personalInfo.headline} Delivering efficient, scalable solutions to transform technical ideas into reality.
               </p>
             </div>
@@ -129,12 +129,12 @@ export default function Hero() {
               <div className="relative pl-6 space-y-3.5">
                 {/* SVG Connecting Circuit Line */}
                 <svg
-                  className="absolute left-0 top-2 w-6 h-32 text-purple-400/60 pointer-events-none"
+                  className="absolute left-0 top-2 w-6 h-32 text-purple-600/60 dark:text-purple-400/60 pointer-events-none"
                   viewBox="0 0 24 130"
                   fill="none"
                 >
                   {/* Origin Circle */}
-                  <circle cx="4" cy="4" r="3.5" stroke="currentColor" strokeWidth="1.5" fill="#0d0f18" />
+                  <circle cx="4" cy="4" r="3.5" stroke="currentColor" strokeWidth="1.5" className="fill-slate-100 dark:fill-[#0d0f18]" />
                   {/* Line down and branching */}
                   <path d="M4 8 V115" stroke="currentColor" strokeWidth="1.2" strokeDasharray="3 2" />
                   {/* Branch to Tag 1 */}
@@ -149,28 +149,28 @@ export default function Hero() {
                 </svg>
 
                 {/* Tag 1: IT Engineer / Undergrad */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#12141f]/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-200 hover:border-purple-400/50 hover:bg-[#16192a] transition-all shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-[#12141f]/90 border border-slate-200 dark:border-white/10 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-purple-400/50 hover:bg-purple-50/50 dark:hover:bg-[#16192a] transition-all shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500 dark:bg-purple-400" />
                   <span>IT Engineer (PICT Undergrad)</span>
                 </div>
 
                 {/* Tag 2: Web / Backend Dev */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#12141f]/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-200 hover:border-purple-400/50 hover:bg-[#16192a] transition-all shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-[#12141f]/90 border border-slate-200 dark:border-white/10 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-purple-400/50 hover:bg-purple-50/50 dark:hover:bg-[#16192a] transition-all shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500 dark:bg-pink-400" />
                   <span>Backend & Systems Dev</span>
                 </div>
 
                 {/* Tag 3: Competitive Programmer / Data */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#12141f]/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-200 hover:border-purple-400/50 hover:bg-[#16192a] transition-all shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white dark:bg-[#12141f]/90 border border-slate-200 dark:border-white/10 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-purple-400/50 hover:bg-purple-50/50 dark:hover:bg-[#16192a] transition-all shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400" />
                   <span>Competitive Programmer (1000+ DSA)</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Status Pill */}
-            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
               <span>Open for Engineering Roles & Internships</span>
             </div>
 
@@ -181,17 +181,17 @@ export default function Hero() {
             <div className="relative w-full max-w-[320px] sm:max-w-[360px] mx-auto group">
               
               {/* Backlight Aura Glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-pink-500/20 to-amber-500/10 blur-2xl rounded-full scale-95 group-hover:scale-105 transition-all duration-500 -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-600/25 via-pink-500/20 to-amber-500/10 blur-2xl rounded-full scale-95 group-hover:scale-105 transition-all duration-500 -z-10" />
 
-              {/* Glowing Framed Photo Container matching reference */}
-              <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 via-transparent to-transparent shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xs">
+              {/* Glowing Framed Photo Container */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/15 bg-slate-100 dark:bg-gradient-to-b dark:from-white/10 dark:via-transparent dark:to-transparent shadow-xl shadow-slate-300/50 dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xs">
                 
                 {/* User's Actual Photo */}
-                <div className="w-full h-[400px] sm:h-[450px] overflow-hidden flex items-start justify-center bg-[#0d0f18]/60">
+                <div className="w-full h-[380px] sm:h-[440px] overflow-hidden flex items-start justify-center bg-slate-100 dark:bg-[#0d0f18]/60">
                   <img
                     src="/sujal-photo.png"
                     alt={personalInfo.name}
-                    className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] group-hover:scale-[1.03] transition-transform duration-500"
+                    className="w-full h-full object-cover object-[center_top] filter brightness-[1.01] contrast-[1.02] group-hover:scale-[1.02] transition-transform duration-500"
                     style={{
                       maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
                       WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
@@ -200,12 +200,12 @@ export default function Hero() {
                 </div>
 
                 {/* Sleek Bottom Vignette Overlay */}
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b0d14] via-[#0b0d14]/70 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-50 via-slate-50/70 to-transparent dark:from-[#0b0d14] dark:via-[#0b0d14]/70 dark:to-transparent pointer-events-none" />
 
                 {/* Subtle Floating Verified Pill at base of photo */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#0e101a]/90 border border-white/15 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-                  <span className="text-[11px] font-mono text-slate-200 font-medium">PICT Pune · 2024–2028</span>
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white/90 dark:bg-[#0e101a]/90 border border-slate-200 dark:border-white/15 backdrop-blur-md flex items-center gap-1.5 shadow-md shadow-slate-300/40 dark:shadow-black/50">
+                  <Sparkles className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                  <span className="text-[11px] font-mono text-slate-700 dark:text-slate-200 font-medium">PICT Pune · 2024–2028</span>
                 </div>
 
               </div>
@@ -218,14 +218,14 @@ export default function Hero() {
             
             {/* Social Icons Circuit matching reference nodes */}
             <div className="w-full flex lg:justify-end">
-              <div className="relative flex items-center gap-2 sm:gap-3 bg-[#11131c]/90 border border-white/10 rounded-2xl p-2 sm:p-2.5 backdrop-blur-md shadow-xl shadow-black/40">
+              <div className="relative flex items-center gap-2 sm:gap-3 bg-white/90 dark:bg-[#11131c]/90 border border-slate-200 dark:border-white/10 rounded-2xl p-2 sm:p-2.5 backdrop-blur-md shadow-lg shadow-slate-200/50 dark:shadow-black/40">
                 {/* Circuit node: GitHub */}
                 <a
                   href={personalInfo.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 hover:bg-purple-500/20 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-500/20 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
                   title="GitHub"
                 >
                   <GitHubIcon className="w-4 h-4" />
@@ -237,7 +237,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 hover:bg-purple-500/20 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-500/20 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
                   title="LinkedIn"
                 >
                   <LinkedInIcon className="w-4 h-4" />
@@ -249,7 +249,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LeetCode Profile"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 hover:bg-amber-500/20 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 flex items-center justify-center transition-all duration-200 hover:scale-105"
                   title="LeetCode"
                 >
                   <LeetCodeIcon className="w-4 h-4" />
@@ -261,7 +261,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="CodeChef Profile"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 hover:bg-amber-500/20 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 flex items-center justify-center transition-all duration-200 hover:scale-105"
                   title="CodeChef"
                 >
                   <CodeChefIcon className="w-4 h-4" />
@@ -273,7 +273,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Codeforces Profile"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-white/10 hover:border-red-400 hover:bg-red-500/20 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-500/20 text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-105"
                   title="Codeforces"
                 >
                   <CodeforcesIcon className="w-4 h-4" />
@@ -281,24 +281,24 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* "I am Sujal Supekar" Headline matching reference */}
+            {/* "I am Sujal Supekar" Headline */}
             <div className="space-y-1">
-              <span className="text-3xl sm:text-4xl text-slate-300 font-light block tracking-tight">
+              <span className="text-3xl sm:text-4xl text-slate-500 dark:text-slate-300 font-light block tracking-tight">
                 I am
               </span>
-              <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight block">
+              <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight block">
                 Sujal
               </span>
-              <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-amber-300 tracking-tight block">
+              <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 dark:from-purple-400 dark:via-pink-400 dark:to-amber-300 tracking-tight block">
                 Supekar
               </span>
             </div>
 
             {/* Academic Credential & Location */}
-            <div className="flex flex-col items-start lg:items-end text-xs font-mono text-slate-400 space-y-1">
-              <span className="text-slate-300 font-semibold">{personalInfo.degree}</span>
+            <div className="flex flex-col items-start lg:items-end text-xs font-mono text-slate-500 dark:text-slate-400 space-y-1">
+              <span className="text-slate-800 dark:text-slate-300 font-semibold">{personalInfo.degree}</span>
               <span>{personalInfo.college}</span>
-              <span className="text-amber-300 font-bold">Current CGPA: {personalInfo.cgpa}</span>
+              <span className="text-amber-600 dark:text-amber-300 font-bold">Current CGPA: {personalInfo.cgpa}</span>
             </div>
 
             {/* Action Buttons */}
@@ -314,9 +314,9 @@ export default function Hero() {
               <a
                 href={personalInfo.resumePath}
                 download="Sujal-Supekar-Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-xs bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 hover:border-purple-400/50 hover:text-white transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-xs bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-white/15 hover:border-purple-400/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200"
               >
-                <FileDown className="w-3.5 h-3.5 text-purple-400" />
+                <FileDown className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                 <span>Resume</span>
               </a>
             </div>
@@ -326,37 +326,37 @@ export default function Hero() {
         </div>
 
         {/* Bottom Hero Card: "About Me" matching reference design */}
-        <div id="about-card" className="mt-12 sm:mt-16 rounded-3xl bg-[#0f111a]/95 border border-white/10 p-6 sm:p-8 lg:p-10 backdrop-blur-2xl shadow-2xl shadow-black/80">
+        <div id="about-card" className="mt-12 sm:mt-16 rounded-3xl bg-white/95 dark:bg-[#0f111a]/95 border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 lg:p-10 backdrop-blur-2xl shadow-xl shadow-slate-200/40 dark:shadow-2xl dark:shadow-black/80">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Column: About Me Bio */}
             <div className="lg:col-span-6 space-y-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-purple-500 animate-pulse" />
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                   About Me
                 </h2>
               </div>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 {personalInfo.bio}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-slate-300 font-mono">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-slate-700 dark:text-slate-300 font-mono">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
-                  <span>PICT Pune · CGPA: <strong className="text-white">{personalInfo.cgpa}</strong></span>
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                  <span>PICT Pune · CGPA: <strong className="text-slate-900 dark:text-white">{personalInfo.cgpa}</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>Backend & API Architecture</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>PostgreSQL & Relational Data</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>CodeChef 3★ & Codeforces Pupil</span>
                 </div>
               </div>
@@ -368,25 +368,25 @@ export default function Hero() {
               {/* Feature 1: Backend Systems */}
               <a
                 href="#projects"
-                className="group p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex items-center justify-between gap-4 shadow-sm"
+                className="group p-4 rounded-2xl bg-slate-50/80 hover:bg-slate-100/90 dark:bg-white/[0.03] dark:hover:bg-white/[0.06] border border-slate-200 dark:border-white/10 hover:border-purple-500/40 transition-all duration-300 flex items-center justify-between gap-4 shadow-sm"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 p-[1.5px] shrink-0 shadow-md shadow-purple-500/20">
-                    <div className="w-full h-full rounded-[10px] bg-[#12141f] flex items-center justify-center text-purple-300 group-hover:scale-105 transition-transform">
+                    <div className="w-full h-full rounded-[10px] bg-white dark:bg-[#12141f] flex items-center justify-center text-purple-600 dark:text-purple-300 group-hover:scale-105 transition-transform">
                       <Server className="w-5 h-5" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                       Backend Systems & REST APIs
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
                       Node.js, Express.js, PostgreSQL, JWT Authentication, and relational schema optimization.
                     </p>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover:bg-purple-500 group-hover:border-purple-400 group-hover:text-white flex items-center justify-center text-slate-400 transition-all shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 group-hover:bg-purple-600 group-hover:border-purple-500 group-hover:text-white flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all shrink-0">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </a>
@@ -394,25 +394,25 @@ export default function Hero() {
               {/* Feature 2: Algorithmic Problem Solving */}
               <a
                 href="#achievements"
-                className="group p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-amber-500/40 transition-all duration-300 flex items-center justify-between gap-4 shadow-sm"
+                className="group p-4 rounded-2xl bg-slate-50/80 hover:bg-slate-100/90 dark:bg-white/[0.03] dark:hover:bg-white/[0.06] border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all duration-300 flex items-center justify-between gap-4 shadow-sm"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500 to-amber-500 p-[1.5px] shrink-0 shadow-md shadow-amber-500/20">
-                    <div className="w-full h-full rounded-[10px] bg-[#12141f] flex items-center justify-center text-amber-300 group-hover:scale-105 transition-transform">
+                    <div className="w-full h-full rounded-[10px] bg-white dark:bg-[#12141f] flex items-center justify-center text-amber-600 dark:text-amber-300 group-hover:scale-105 transition-transform">
                       <Award className="w-5 h-5" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
                       Competitive Problem Solving & DSA
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
                       1000+ problems solved across LeetCode, CodeChef (3-Star), and Codeforces (Pupil).
                     </p>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover:bg-amber-500 group-hover:border-amber-400 group-hover:text-white flex items-center justify-center text-slate-400 transition-all shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 group-hover:bg-amber-600 group-hover:border-amber-500 group-hover:text-white flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all shrink-0">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </a>
@@ -420,11 +420,11 @@ export default function Hero() {
               {/* Stats Bar */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
                 {stats.map((s, idx) => (
-                  <div key={idx} className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 text-center">
-                    <div className="text-base sm:text-lg font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+                  <div key={idx} className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/5 text-center">
+                    <div className="text-base sm:text-lg font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-300 dark:to-pink-300">
                       {s.value}
                     </div>
-                    <div className="text-[10px] text-slate-400 uppercase font-mono tracking-wider">
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-mono tracking-wider font-medium">
                       {s.label}
                     </div>
                   </div>

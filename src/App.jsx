@@ -40,15 +40,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07080e] text-slate-100 transition-colors duration-300 font-sans selection:bg-purple-500/30 selection:text-purple-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#07080e] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-purple-500/30 selection:text-purple-600 dark:selection:text-purple-300">
       
       {/* Subtle Developer Matrix / Grid Background */}
-      <div className="fixed inset-0 bg-grid-pattern opacity-60 pointer-events-none z-0" />
+      <div className="fixed inset-0 bg-grid-pattern opacity-40 dark:opacity-60 pointer-events-none z-0" />
       
       {/* Ambient Glows */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/10 blur-[160px] rounded-full pointer-events-none z-0" />
-      <div className="fixed top-1/3 right-0 w-[500px] h-[500px] bg-pink-600/10 blur-[180px] rounded-full pointer-events-none z-0" />
-      <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-amber-500/5 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/5 dark:bg-purple-600/10 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="fixed top-1/3 right-0 w-[500px] h-[500px] bg-pink-600/5 dark:bg-pink-600/10 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-amber-500/5 dark:bg-amber-500/5 blur-[180px] rounded-full pointer-events-none z-0" />
 
       {/* Main Content Hierarchy aligned with Reference Design */}
       <div className="relative z-10 flex flex-col min-h-screen">

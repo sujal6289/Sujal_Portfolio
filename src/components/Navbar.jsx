@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
-import { Menu, X, Sun, Moon, FileDown, MessageSquare } from 'lucide-react';
+import { Menu, X, Sun, Moon, FileDown } from 'lucide-react';
 
 export default function Navbar({ isDarkMode, toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +45,8 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
       <div className="w-full max-w-6xl pointer-events-auto">
         <div className={`transition-all duration-300 rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between border ${
           isScrolled
-            ? 'bg-[#0d0f18]/90 dark:bg-[#0d0f18]/90 backdrop-blur-2xl border-white/15 shadow-2xl shadow-black/80'
-            : 'bg-[#101320]/80 dark:bg-[#101320]/80 backdrop-blur-xl border-white/10 shadow-xl shadow-black/50'
+            ? 'bg-white/90 dark:bg-[#0d0f18]/90 backdrop-blur-2xl border-slate-200/80 dark:border-white/15 shadow-xl shadow-slate-200/50 dark:shadow-black/80'
+            : 'bg-white/80 dark:bg-[#101320]/80 backdrop-blur-xl border-slate-200/60 dark:border-white/10 shadow-lg shadow-slate-200/30 dark:shadow-black/50'
         }`}>
           
           {/* Logo / Monogram */}
@@ -55,22 +55,22 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
             className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-full p-1"
           >
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 p-[1.5px] shadow-sm shadow-purple-500/30 group-hover:scale-105 transition-all">
-              <div className="w-full h-full rounded-full bg-[#0d0f18] flex items-center justify-center font-display font-bold text-xs text-white">
+              <div className="w-full h-full rounded-full bg-slate-50 dark:bg-[#0d0f18] flex items-center justify-center font-display font-bold text-xs text-purple-700 dark:text-white">
                 SS
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-sm tracking-tight text-white group-hover:text-purple-300 transition-colors">
+              <span className="font-display font-bold text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                 {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[2] || personalInfo.name.split(' ')[1]}
               </span>
-              <span className="text-[10px] font-mono text-purple-300/80 tracking-wider uppercase -mt-0.5">
+              <span className="text-[10px] font-mono text-purple-600 dark:text-purple-300/80 tracking-wider uppercase -mt-0.5 font-semibold">
                 PICT Pune
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.04] px-3 py-1 rounded-full border border-white/5">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 dark:bg-white/[0.04] px-3 py-1 rounded-full border border-slate-200/70 dark:border-white/5">
             {navLinks.map((link) => {
               const targetId = link.href.substring(1);
               const isActive = activeSection === targetId;
@@ -80,8 +80,8 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
                   href={link.href}
                   className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'text-white bg-white/10 shadow-xs border border-white/10 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      ? 'text-purple-700 dark:text-white bg-white dark:bg-white/10 shadow-xs border border-slate-200/60 dark:border-white/10 font-semibold'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/5'
                   }`}
                 >
                   {link.name}
@@ -96,25 +96,25 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
             <button
               onClick={toggleTheme}
               aria-label="Toggle color theme"
-              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300 hover:text-white hover:border-purple-400/40 transition-all duration-200"
+              className="p-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-purple-400/40 transition-all duration-200"
             >
-              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-300" /> : <Moon className="w-3.5 h-3.5 text-purple-300" />}
+              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-purple-600" />}
             </button>
 
             {/* Resume Button */}
             <a
               href={personalInfo.resumePath}
               download="Sujal-Supekar-Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-200 bg-white/5 border border-white/10 hover:border-purple-400/40 hover:text-white transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-purple-400/40 hover:text-slate-900 dark:hover:text-white transition-all duration-200"
             >
-              <FileDown className="w-3.5 h-3.5 text-purple-400" />
+              <FileDown className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
               <span>Resume</span>
             </a>
 
             {/* Glowing Gradient "Contact Me" Button matching reference image */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 rounded-full text-xs sm:text-xs font-semibold bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               <span>Contact Me</span>
             </a>
@@ -125,17 +125,17 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300"
+              className="p-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300"
             >
-              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-300" /> : <Moon className="w-3.5 h-3.5 text-purple-300" />}
+              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-purple-600" />}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Open mobile navigation"
-              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300"
+              className="p-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300"
             >
-              {mobileMenuOpen ? <X className="w-4 h-4 text-white" /> : <Menu className="w-4 h-4 text-white" />}
+              {mobileMenuOpen ? <X className="w-4 h-4 text-slate-900 dark:text-white" /> : <Menu className="w-4 h-4 text-slate-900 dark:text-white" />}
             </button>
           </div>
 
@@ -143,18 +143,18 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
 
         {/* Mobile Drawer */}
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-2 rounded-3xl bg-[#0d0f18]/95 border border-white/15 p-4 space-y-2 backdrop-blur-2xl shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="sm:hidden mt-2 rounded-3xl bg-white/95 dark:bg-[#0d0f18]/95 border border-slate-200 dark:border-white/15 p-4 space-y-2 backdrop-blur-2xl shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors"
+                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+            <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex flex-col gap-2">
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -166,9 +166,9 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
                 href={personalInfo.resumePath}
                 download="Sujal-Supekar-Resume.pdf"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/10"
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/10"
               >
-                <FileDown className="w-3.5 h-3.5 text-purple-400" />
+                <FileDown className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                 <span>Download Resume</span>
               </a>
             </div>
