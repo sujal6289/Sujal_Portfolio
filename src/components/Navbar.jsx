@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
-import { Menu, X, Sun, Moon, FileDown, ExternalLink } from 'lucide-react';
+import { Menu, X, Sun, Moon, FileDown, MessageSquare } from 'lucide-react';
 
 export default function Navbar({ isDarkMode, toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,8 +11,8 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'about', 'education', 'skills', 'projects', 'experience', 'achievements', 'contact'];
-      const scrollPosition = window.scrollY + 120;
+      const sections = ['hero', 'about', 'experience', 'skills', 'projects', 'education', 'achievements', 'contact'];
+      const scrollPosition = window.scrollY + 140;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -32,56 +32,56 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
+    { name: 'About Me', href: '#about' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Achievements', href: '#achievements' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/85 dark:bg-navy-950/85 backdrop-blur-md border-b border-slate-200/80 dark:border-white/10 shadow-lg shadow-black/5'
-          : 'bg-transparent py-2'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
+      <div className="w-full max-w-6xl pointer-events-auto">
+        <div className={`transition-all duration-300 rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between border ${
+          isScrolled
+            ? 'bg-[#0d0f18]/90 dark:bg-[#0d0f18]/90 backdrop-blur-2xl border-white/15 shadow-2xl shadow-black/80'
+            : 'bg-[#101320]/80 dark:bg-[#101320]/80 backdrop-blur-xl border-white/10 shadow-xl shadow-black/50'
+        }`}>
           
           {/* Logo / Monogram */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded-lg p-1"
+            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-full p-1"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400/20 to-brand-600/30 border border-brand-500/40 dark:border-brand-400/40 flex items-center justify-center font-mono font-bold text-brand-600 dark:text-brand-400 group-hover:scale-105 group-hover:border-brand-500 transition-all duration-300 shadow-sm shadow-brand-400/20">
-              SS
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 p-[1.5px] shadow-sm shadow-purple-500/30 group-hover:scale-105 transition-all">
+              <div className="w-full h-full rounded-full bg-[#0d0f18] flex items-center justify-center font-display font-bold text-xs text-white">
+                SS
+              </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-slate-100 group-hover:text-brand-500 dark:group-hover:text-brand-300 transition-colors">
-                Sujal Supekar
+              <span className="font-display font-bold text-sm tracking-tight text-white group-hover:text-purple-300 transition-colors">
+                {personalInfo.name.split(' ')[0]} {personalInfo.name.split(' ')[2] || personalInfo.name.split(' ')[1]}
               </span>
-              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 tracking-wider uppercase -mt-0.5">
+              <span className="text-[10px] font-mono text-purple-300/80 tracking-wider uppercase -mt-0.5">
                 PICT Pune
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 bg-slate-100/90 dark:bg-navy-900/60 px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 backdrop-blur-sm">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.04] px-3 py-1 rounded-full border border-white/5">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.substring(1);
+              const targetId = link.href.substring(1);
+              const isActive = activeSection === targetId;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-1.5 text-xs xl:text-sm font-medium rounded-full transition-all duration-200 ${
+                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'text-brand-600 dark:text-brand-300 bg-brand-500/15 font-semibold shadow-xs'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-black/5 dark:hover:bg-white/5'
+                      ? 'text-white bg-white/10 shadow-xs border border-white/10 font-semibold'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.name}
@@ -91,24 +91,32 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 sm:gap-2.5">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle color theme"
-              className="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-navy-900/60 text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-300 hover:border-brand-400/40 transition-all duration-200"
+              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300 hover:text-white hover:border-purple-400/40 transition-all duration-200"
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-slate-700" />}
+              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-300" /> : <Moon className="w-3.5 h-3.5 text-purple-300" />}
             </button>
 
-            {/* Resume Download Action */}
+            {/* Resume Button */}
             <a
               href={personalInfo.resumePath}
               download="Sujal-Supekar-Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-navy-950 shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-200 bg-white/5 border border-white/10 hover:border-purple-400/40 hover:text-white transition-all duration-200"
             >
-              <FileDown className="w-4 h-4" />
+              <FileDown className="w-3.5 h-3.5 text-purple-400" />
               <span>Resume</span>
+            </a>
+
+            {/* Glowing Gradient "Contact Me" Button matching reference image */}
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-1.5 rounded-full text-xs sm:text-xs font-semibold bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            >
+              <span>Contact Me</span>
             </a>
           </div>
 
@@ -117,48 +125,57 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-navy-900/60 text-slate-700 dark:text-slate-300"
+              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300"
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-slate-700" />}
+              {isDarkMode ? <Sun className="w-3.5 h-3.5 text-amber-300" /> : <Moon className="w-3.5 h-3.5 text-purple-300" />}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Open mobile navigation"
-              className="p-2 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-navy-900/60 text-slate-700 dark:text-slate-300"
+              className="p-2 rounded-full border border-white/10 bg-white/5 text-slate-300"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4 text-white" /> : <Menu className="w-4 h-4 text-white" />}
             </button>
           </div>
-        </div>
-      </div>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="sm:hidden bg-white/95 dark:bg-navy-950/95 border-b border-slate-200 dark:border-white/10 px-4 pt-3 pb-6 space-y-2 backdrop-blur-xl animate-in slide-in-from-top-4 duration-200">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-300 hover:bg-black/5 dark:hover:bg-white/5"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex flex-col gap-2">
-            <a
-              href={personalInfo.resumePath}
-              download="Sujal-Supekar-Resume.pdf"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-semibold bg-brand-500 text-navy-950"
-            >
-              <FileDown className="w-4 h-4" />
-              <span>Download Resume</span>
-            </a>
-          </div>
         </div>
-      )}
+
+        {/* Mobile Drawer */}
+        {mobileMenuOpen && (
+          <div className="sm:hidden mt-2 rounded-3xl bg-[#0d0f18]/95 border border-white/15 p-4 space-y-2 backdrop-blur-2xl shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 text-white shadow-md shadow-purple-500/30"
+              >
+                <span>Contact Me</span>
+              </a>
+              <a
+                href={personalInfo.resumePath}
+                download="Sujal-Supekar-Resume.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/10"
+              >
+                <FileDown className="w-3.5 h-3.5 text-purple-400" />
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+        )}
+
+      </div>
     </header>
   );
 }

@@ -9,8 +9,7 @@ import {
   Copy, 
   ExternalLink,
   MessageSquare,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from 'lucide-react';
 
 export default function Contact() {
@@ -46,20 +45,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative border-t border-slate-200 dark:border-white/5">
+    <section id="contact" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 border border-brand-500/20 mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 mb-3">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Get in Touch</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
             Let's Connect & Collaborate
           </h2>
-          <div className="w-12 h-1 bg-brand-500 dark:bg-brand-400 rounded-full mt-3" />
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-4 max-w-xl">
+          <p className="text-sm sm:text-base text-slate-400 mt-3 max-w-xl mx-auto">
             Currently open for software engineering internships, technical collaborations, and problem-solving opportunities. Feel free to reach out directly.
           </p>
         </div>
@@ -70,19 +68,19 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-4">
             
             {/* Email Card */}
-            <div className="bg-white dark:bg-navy-900/60 hover:bg-slate-50 dark:hover:bg-navy-900/90 rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-white/10 hover:border-brand-500/40 dark:hover:border-brand-400/40 transition-all duration-200 shadow-md shadow-black/5 dark:shadow-black/20">
+            <div className="bg-[#0f111a]/85 hover:bg-[#121422]/95 rounded-3xl p-5 sm:p-6 border border-white/10 hover:border-purple-500/40 transition-all duration-200 shadow-xl shadow-black/40">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">
+                <div className="flex items-center gap-3.5">
+                  <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                    <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
                       Email Address
                     </span>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100 hover:text-brand-600 dark:hover:text-brand-300 transition-colors"
+                      className="text-sm sm:text-base font-semibold text-white hover:text-purple-300 transition-colors"
                     >
                       {personalInfo.email}
                     </a>
@@ -92,36 +90,36 @@ export default function Contact() {
                 <button
                   onClick={() => handleCopy(personalInfo.email, 'email')}
                   title="Copy email address"
-                  className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
                 >
                   {copiedType === 'email' ? (
-                    <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                    <Check className="w-4 h-4 text-emerald-400" />
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
                 </button>
               </div>
               {copiedType === 'email' && (
-                <p className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 mt-2 pl-12">
+                <p className="text-[11px] font-mono text-emerald-400 mt-2 pl-14">
                   ✓ Email copied to clipboard!
                 </p>
               )}
             </div>
 
             {/* Phone Card */}
-            <div className="bg-white dark:bg-navy-900/60 hover:bg-slate-50 dark:hover:bg-navy-900/90 rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-white/10 hover:border-brand-500/40 dark:hover:border-brand-400/40 transition-all duration-200 shadow-md shadow-black/5 dark:shadow-black/20">
+            <div className="bg-[#0f111a]/85 hover:bg-[#121422]/95 rounded-3xl p-5 sm:p-6 border border-white/10 hover:border-purple-500/40 transition-all duration-200 shadow-xl shadow-black/40">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">
+                <div className="flex items-center gap-3.5">
+                  <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                    <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
                       Direct Phone
                     </span>
                     <a
                       href={`tel:${personalInfo.phone}`}
-                      className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100 hover:text-brand-600 dark:hover:text-brand-300 transition-colors"
+                      className="text-sm sm:text-base font-semibold text-white hover:text-purple-300 transition-colors"
                     >
                       {personalInfo.formattedPhone}
                     </a>
@@ -131,33 +129,33 @@ export default function Contact() {
                 <button
                   onClick={() => handleCopy(personalInfo.phone, 'phone')}
                   title="Copy phone number"
-                  className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
                 >
                   {copiedType === 'phone' ? (
-                    <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                    <Check className="w-4 h-4 text-emerald-400" />
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
                 </button>
               </div>
               {copiedType === 'phone' && (
-                <p className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 mt-2 pl-12">
+                <p className="text-[11px] font-mono text-emerald-400 mt-2 pl-14">
                   ✓ Phone number copied to clipboard!
                 </p>
               )}
             </div>
 
             {/* Location Card */}
-            <div className="bg-white dark:bg-navy-900/60 rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-white/10 shadow-md shadow-black/5 dark:shadow-black/20">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20">
+            <div className="bg-[#0f111a]/85 rounded-3xl p-5 sm:p-6 border border-white/10 shadow-xl shadow-black/40">
+              <div className="flex items-center gap-3.5">
+                <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
                     Current Location
                   </span>
-                  <span className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100">
+                  <span className="text-sm sm:text-base font-semibold text-white">
                     {personalInfo.location}
                   </span>
                 </div>
@@ -165,8 +163,8 @@ export default function Contact() {
             </div>
 
             {/* All Verified Socials Grid */}
-            <div className="bg-slate-100/70 dark:bg-navy-900/40 rounded-2xl p-5 border border-slate-200 dark:border-white/5">
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-3">
+            <div className="bg-[#0e1019]/70 rounded-3xl p-5 sm:p-6 border border-white/5 space-y-3">
+              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
                 Quick Profile Navigation
               </span>
               <div className="grid grid-cols-2 gap-2 text-xs font-mono">
@@ -174,7 +172,7 @@ export default function Contact() {
                   href={personalInfo.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-300 flex items-center justify-between border border-slate-200 dark:border-white/5 transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white flex items-center justify-between border border-white/5 transition-all"
                 >
                   <span>LinkedIn</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
@@ -184,7 +182,7 @@ export default function Contact() {
                   href={personalInfo.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-300 flex items-center justify-between border border-slate-200 dark:border-white/5 transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white flex items-center justify-between border border-white/5 transition-all"
                 >
                   <span>GitHub</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
@@ -194,7 +192,7 @@ export default function Contact() {
                   href={personalInfo.socials.leetcode}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-amber-500 flex items-center justify-between border border-slate-200 dark:border-white/5 transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-amber-400 flex items-center justify-between border border-white/5 transition-all"
                 >
                   <span>LeetCode</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
@@ -204,7 +202,7 @@ export default function Contact() {
                   href={personalInfo.socials.codechef}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-amber-500 flex items-center justify-between border border-slate-200 dark:border-white/5 transition-colors"
+                  className="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-amber-400 flex items-center justify-between border border-white/5 transition-all"
                 >
                   <span>CodeChef</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
@@ -215,18 +213,18 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Message Form */}
-          <div className="lg:col-span-7 bg-white dark:bg-navy-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-white/10 backdrop-blur-sm shadow-xl shadow-black/5 dark:shadow-black/20">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+          <div className="lg:col-span-7 bg-[#0f111a]/90 rounded-3xl p-6 sm:p-8 border border-white/10 backdrop-blur-xl shadow-2xl shadow-black/50">
+            <h3 className="font-display text-2xl font-bold text-white mb-2">
               Send a Direct Message
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6">
+            <p className="text-xs sm:text-sm text-slate-400 mb-6">
               Fill out the details below to trigger an email directly to Sujal's inbox.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase tracking-wider">
                     Your Name *
                   </label>
                   <input
@@ -235,12 +233,12 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. John Doe"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950/80 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-500 dark:focus:border-brand-400 focus:ring-1 focus:ring-brand-500 text-sm transition-all"
+                    className="w-full px-4 py-3 rounded-2xl bg-[#0a0b12] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 text-sm transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase tracking-wider">
                     Your Email *
                   </label>
                   <input
@@ -249,13 +247,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. john@company.com"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950/80 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-500 dark:focus:border-brand-400 focus:ring-1 focus:ring-brand-500 text-sm transition-all"
+                    className="w-full px-4 py-3 rounded-2xl bg-[#0a0b12] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 text-sm transition-all"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 uppercase tracking-wider">
+                <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase tracking-wider">
                   Subject
                 </label>
                 <input
@@ -263,12 +261,12 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   placeholder="e.g. Internship Opportunity / Project Inquiry"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950/80 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-500 dark:focus:border-brand-400 focus:ring-1 focus:ring-brand-500 text-sm transition-all"
+                  className="w-full px-4 py-3 rounded-2xl bg-[#0a0b12] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 text-sm transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 mb-1.5 uppercase tracking-wider">
+                <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase tracking-wider">
                   Message *
                 </label>
                 <textarea
@@ -277,20 +275,20 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Hello Sujal, I'd like to discuss an opportunity regarding..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-navy-950/80 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-brand-500 dark:focus:border-brand-400 focus:ring-1 focus:ring-brand-500 text-sm transition-all resize-y min-h-[100px]"
+                  className="w-full px-4 py-3 rounded-2xl bg-[#0a0b12] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 text-sm transition-all resize-y min-h-[110px]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-500 to-brand-600 dark:from-brand-400 dark:to-brand-500 hover:from-brand-400 hover:to-brand-500 text-white dark:text-navy-950 shadow-lg shadow-brand-500/25 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-xs sm:text-sm bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white shadow-lg shadow-purple-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 <span>Send Message</span>
                 <Send className="w-4 h-4" />
               </button>
 
               {submitted && (
-                <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono">
+                <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
                   ✓ Message drafted! Opening your default email client to send to sujalsupekar6289@gmail.com.
                 </div>
               )}

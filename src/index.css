@@ -8,7 +8,7 @@
   }
 
   html.dark body {
-    background-color: #070a12;
+    background-color: #07080e;
     color: #f8fafc;
   }
 
@@ -23,13 +23,13 @@
   width: 8px;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #070a12;
+  background: #07080e;
 }
 .light ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1c2032;
   border-radius: 4px;
 }
 .light ::-webkit-scrollbar-thumb {
@@ -37,20 +37,40 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #8b5cf6;
 }
 
-/* Developer Grid Matrix */
+/* Developer Grid Matrix with soft ambient */
 .dark .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 .light .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 40px 40px;
   background-image: 
     linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
+
+/* Glowing Neon utilities */
+.neon-glow-purple {
+  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.5));
+}
+.neon-glow-pink {
+  filter: drop-shadow(0 0 14px rgba(236, 72, 153, 0.5));
+}
+.neon-glow-amber {
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.45));
+}
+
+/* Glassmorphism surfaces */
+.glass-card {
+  background: rgba(16, 18, 27, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+

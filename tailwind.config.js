@@ -7,6 +7,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+
+      fontFamily: {
+        display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
       colors: {
         brand: {
           50: '#ecfeff',
@@ -22,16 +28,19 @@ export default {
           accent: '#38bdf8',
         },
         navy: {
-          950: '#070a12',
-          900: '#0c1222',
-          850: '#10182e',
-          800: '#16203a',
-          700: '#233256',
+          950: '#07080e',
+          900: '#0c0e17',
+          850: '#101320',
+          800: '#161929',
+          700: '#21253a',
+        },
+        surface: {
+          dark: '#0e1019',
+          card: '#11131c',
+          cardHover: '#161824',
+          border: 'rgba(255, 255, 255, 0.08)',
+          borderHover: 'rgba(168, 85, 247, 0.35)',
         }
-      },
-      fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
